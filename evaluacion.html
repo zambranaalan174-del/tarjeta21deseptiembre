@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Virtual - 21 de Septiembre</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FONDO DIFUMINADO */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -30px;
+
+            background-image: var(--background);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            filter: blur(25px);
+            transform: scale(1.1);
+
+            z-index: -2;
+        }
+
+        /* CAPA OSCURA SUAVE */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.18);
+
+            z-index: -1;
+        }
+
+        /* IMAGEN PRINCIPAL CENTRADA */
+        .main-image {
+            position: fixed;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: center;
+
+            z-index: -1;
+        }
+
+        /* TARJETA SEMI TRANSPARENTE SIN DESENFOQUE */
+        .card {
+            background: rgba(255, 255, 255, 0.35);
+
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+
+            padding: 30px;
+            border-radius: 16px;
+
+            max-width: 600px;
+            width: 90%;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.30);
+
+            text-align: center;
+
+            border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+
+        .btn {
+            background: #1b365d;
+            color: white;
+            border: none;
+
+            padding: 12px 24px;
+
+            border-radius: 25px;
+
+            font-size: 1rem;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img id="main-image" class="main-image" src="foto1.jpeg">
+
+    <div class="card">
+
+        <!-- PORTADA 1 -->
+        <div id="page1" class="page active">
+
+            <h1>¡Feliz 21 de Septiembre! 🌸</h1>
+
+            <p style="text-align: center;">
+                Día del Estudiante y de la Primavera.
+                ¡Celebramos el esfuerzo, el entusiasmo
+                y el futuro de nuestra juventud!
+            </p>
+
+            <button class="btn" onclick="showPage(2)">
+                Ver Mi Testimonio
+            </button>
+
+        </div>
+
+
+        <!-- PORTADA 2 -->
+        <div id="page2" class="page">
+
+            <h1>Mi Testimonio como Estudiante</h1>
+
+            <p>
+                Durante mi etapa escolar he tenido materias que me han resultado más fáciles y otras que me han costado bastante. También he tenido momentos en los que me he sentido cansado o preocupado por los trabajos y exámenes, pero poco a poco aprendí que si me esfuerzo y soy constante puedo mejorar. Una de las áreas que más me ha llamado la atención es Sistemas Informáticos, porque me gusta aprender sobre tecnología, programación y la creación de proyectos.
+
+                El colegio también me ha ayudado a conocer mejor mis fortalezas y las cosas que todavía debo mejorar. Considero que soy una persona responsable, con ganas de aprender y que puede aportar ideas cuando trabaja en equipo. Sin embargo, todavía quiero mejorar mi forma de comunicarme, tener más confianza en mí mismo y no preocuparme tanto por las críticas.
+
+                Ahora que estoy acercándome a una nueva etapa de mi vida, valoro más todo lo que he vivido en el colegio. Sé que todavía me falta mucho por aprender, pero quiero llevar conmigo las experiencias, enseñanzas y amistades que conseguí durante estos años.
+
+            </p>
+
+            <button class="btn" onclick="showPage(3)">
+                Ver Mi Propósito a Futuro
+            </button>
+
+        </div>
+
+
+        <!-- PORTADA 3 -->
+        <div id="page3" class="page">
+
+            <h1>Mi Propósito a Futuro</h1>
+
+            <p>
+                Quiero aprender más sobre programación, tecnología y desarrollo de proyectos, pero también quiero seguir mejorando como persona. Sé que para alcanzar mis objetivos necesitaré ser constante, tener paciencia y no rendirme cuando algo no salga como esperaba. También quiero aprender de mis errores y aprovechar cada oportunidad que se presente para crecer.
+                
+                En el futuro me gustaría crear proyectos tecnológicos que puedan ser útiles para otras personas y que solucionen problemas de la vida cotidiana. Quiero demostrar que todo el esfuerzo que estoy realizando durante mi etapa escolar puede convertirse en algo importante. También me gustaría tener estabilidad, ayudar a mi familia y poder disfrutar de nuevas experiencias.
+                
+                Además de mis estudios y mi trabajo, quiero tener tiempo para las personas que quiero, conocer nuevos lugares y vivir experiencias que me permitan seguir aprendiendo. Me gustaría viajar, conocer lugares tranquilos rodeados de naturaleza y construir buenos recuerdos.
+                
+                No sé exactamente cómo será mi futuro, pero tengo claro que quiero construirlo con esfuerzo y responsabilidad. Mi propósito es seguir avanzando, aprovechar mis capacidades y convertirme en alguien de quien pueda sentirme orgulloso.
+                
+            </p>
+
+            <button class="btn" onclick="showPage(1)">
+                Volver al Inicio
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const backgrounds = {
+            1: "foto1.jpeg",
+            2: "foto2.jpeg",
+            3: "foto3.jpeg"
+        };
+
+
+        const mainImage = document.getElementById("main-image");
+
+
+        function showPage(pageNumber) {
+
+            /* Cambiar página */
+            document.querySelectorAll('.page').forEach(p => {
+                p.classList.remove('active');
+            });
+
+            document.getElementById('page' + pageNumber)
+                .classList.add('active');
+
+
+            /* Cambiar imagen principal */
+            mainImage.src = backgrounds[pageNumber];
+
+
+            /* Cambiar fondo difuminado */
+            document.body.style.setProperty(
+                '--background',
+                `url('${backgrounds[pageNumber]}')`
+            );
+        }
+
+
+        /* Fondo inicial */
+        document.body.style.setProperty(
+            '--background',
+            "url('foto1.jpeg')"
+        );
+
+    </script>
+
+</body>
+</html>
